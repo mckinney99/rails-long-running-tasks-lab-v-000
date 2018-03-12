@@ -1,9 +1,8 @@
-<ul>
-  <h1>Songs</h1>
-  <%= form_tag songs_upload_path, multipart: true do %>
-    <%= file_field_tag :songs %>
-    <%= submit_tag "Import Songs" %>
-  <% end %>
+
+<%= form_tag songs_upload_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import Songs" %>
+<% end %>
   <ul>
   <% @customers.each do |customer| %>
   <li><%= display_artist(song) %> - <%= link_to song.title, song_path(song) %></li>
